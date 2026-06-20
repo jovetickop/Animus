@@ -1,0 +1,7 @@
+{
+  "name": "animus-toolkit",
+  "version": "1.0.0",
+  "description": "JiangJie 的 Claude Code 工具包插件",
+  "license": "MIT",
+  "type": "module"
+}

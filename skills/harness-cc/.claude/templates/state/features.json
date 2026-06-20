@@ -1,0 +1,16 @@
+[
+  {
+    "id": "T001",
+    "name": "任务名称",
+    "status": "pending",
+    "depends_on": [],
+    "priority": 100,
+    "test_command": "",
+    "last_error": "",
+    "updated_at": "",
+    "acceptance_criteria": [
+      "验收标准1",
+      "验收标准2"
+    ]
+  }
+]

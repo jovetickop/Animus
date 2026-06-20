@@ -1,0 +1,11 @@
+.claude/commands/
+.claude/agents/
+.claude/rules/
+.claude/harness/
+.claude/templates/
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+Thumbs.db

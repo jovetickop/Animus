@@ -1,0 +1,15 @@
+{
+  "name": "animus-toolkit-marketplace",
+  "description": "JiangJie 的 Claude Code 插件市场 - 提供编码工作流技能、状态栏、配置模板",
+  "owner": {
+    "name": "JiangJie"
+  },
+  "plugins": [
+    {
+      "name": "animus-toolkit",
+      "description": "包含 harness-cc 编码工作流引擎、statusline 状态栏、通用配置模板和 MCP 配置",
+      "version": "1.0.0",
+      "source": "./"
+    }
+  ]
+}
