@@ -1,6 +1,6 @@
 # animus
 
-jovetickop 的 Claude Code 个人工具包。包含 **26 个技能**（20 个 superpowers-zh 中文技能 + harness-cc 编码工作流引擎 + tdd-workflow + planning-with-files 计划管理 + doc 文档处理 + pptx 演示文稿 + integrate-to-animus 集成工具）以及配置模板。
+jovetickop 的 Claude Code 个人工具包。包含 **25 个技能**（harness-cc 编码工作流引擎含 tdd-workflow 子技能 + planning-with-files 计划管理 + doc 文档处理 + pptx 演示文稿 + integrate-to-animus 集成工具 + 中文代码审查/提交/文档规范 + 调试/测试/TDD 工作流等），以及 superpowers-zh 中文技能集和配置模板。
 
 ## 架构
 
@@ -29,7 +29,7 @@ animus 将个人开发工具打包为标准 Claude Code 插件：
 
 | 类别 | 内容 | 参考文档 |
 |------|------|---------|
-| 技能列表 | 27 个技能说明、触发方式、路径 | [技能参考](./docs/skills-reference.md) |
+| 技能列表 | 25 个技能说明、触发方式、路径 | [技能参考](./docs/skills-reference.md) |
 | 开发工作流 | 技能如何协作、完整流程说明 | [工作流指南](./docs/workflow-guide.md) |
 | 状态栏 | 实时 HUD（模型/上下文/工具/Agent/待办） | [claude-hud 配置](./plugins/claude-hud/commands/setup.md) |
 | 配置模板 | settings.json / MCP 配置示例 | [config-templates/](../config-templates/README.md) |

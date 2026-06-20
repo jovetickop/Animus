@@ -8,5 +8,5 @@
   "homepage": "https://github.com/jovetickop/Animus",
   "repository": "https://github.com/jovetickop/Animus",
   "license": "MIT",
-  "keywords": ["skills", "chinese", "workflow", "planning", "harness", "claude-hud", "coding", "superpowers", "doc", "pptx"]
+  "keywords": ["skills", "chinese", "workflow", "planning", "harness", "claude-hud", "coding", "superpowers", "doc", "pptx", "debugging", "tdd", "code-review", "mcp", "brainstorming"]
 }
