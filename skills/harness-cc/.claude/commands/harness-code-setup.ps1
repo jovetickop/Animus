@@ -1,4 +1,4 @@
-param(
+﻿param(
     [Parameter(Mandatory=$true)]
     [string]$ProjectDir,
     [Parameter(Mandatory=$true)]
@@ -18,6 +18,7 @@ $pkgFile = Join-Path $ProjectDir "package.json"
 $pyprojectFile = Join-Path $ProjectDir "pyproject.toml"
 $reqFile = Join-Path $ProjectDir "requirements.txt"
 
+$goModFile = Join-Path $ProjectDir "go.mod"
 if (Test-Path $cmakeFile) {
     $content = Get-Content $cmakeFile -Raw
     if ($content -match 'find_package\(Qt') {
@@ -27,6 +28,8 @@ if (Test-Path $cmakeFile) {
     }
 } elseif (Test-Path $cargoFile) {
     $projectType = "rust"
+} elseif (Test-Path $goModFile) {
+    $projectType = "go"
 } elseif (Test-Path $pkgFile) {
     $projectType = "node"
 } elseif (Test-Path $pyprojectFile -or (Test-Path $reqFile)) {
@@ -39,7 +42,7 @@ Write-Host "[harness] Detected project type: $projectType"
 $targetClaude = Join-Path $ProjectDir ".claude"
 
 # === 3. Always-copied source directories ===
-# 排除 features.json 和 claude-progress.txt——它们是项目状态数据，不能覆盖
+# �ų� features.json �� claude-progress.txt������������Ŀ״̬���ݣ����ܸ���
 $excludeStateFiles = @('features.json', 'claude-progress.txt')
 $alwaysCopy = @(
     @{Src=".claude/templates/harness";       Dst="harness"}
@@ -58,7 +61,7 @@ foreach ($item in $alwaysCopy) {
     $dstDir = Join-Path $targetClaude $item.Dst
     if (Test-Path $srcDir) {
         if (-not (Test-Path $dstDir)) { New-Item -ItemType Directory -Path $dstDir -Force | Out-Null }
-        # 对 harness 目录排除项目状态文件，防止覆盖已有数据
+        # �� harness Ŀ¼�ų���Ŀ״̬�ļ�����ֹ������������
         if ($item.Dst -eq "harness") {
             Copy-Item -Path "$srcDir/*" -Destination $dstDir -Recurse -Force -Exclude $excludeStateFiles
         } else {
@@ -70,7 +73,7 @@ foreach ($item in $alwaysCopy) {
     }
 }
 
-# 仅首次安装时创建 features.json 和 claude-progress.txt
+# ���״ΰ�װʱ���� features.json �� claude-progress.txt
 $stateFiles = @(
     @{Name="features.json"; Src=".claude/templates/state/features.json"; Dst="state/features.json"}
     @{Name="claude-progress.txt"; Src=".claude/templates/state/claude-progress.txt"; Dst="state/claude-progress.txt"}
@@ -79,6 +82,8 @@ foreach ($item in $stateFiles) {
     $src = Join-Path $SkillDir $item.Src
     $dst = Join-Path $targetClaude $item.Dst
     if (-not (Test-Path $dst) -and (Test-Path $src)) {
+        $parentDir = Split-Path $dst -Parent
+        if (-not (Test-Path $parentDir)) { New-Item -ItemType Directory -Path $parentDir -Force | Out-Null }
         Copy-Item $src $dst
         $fileCount++
         Write-Host "[harness]   Created $($item.Name) (first install)"
@@ -86,20 +91,21 @@ foreach ($item in $stateFiles) {
 }
 
 # === 4. Type-specific copy ===
-# 注意：源路径在技能目录下（含 .claude/），目的路径相对于项目 .claude/ 目录（不含 .claude/）
+# ע�⣺Դ·���ڼ���Ŀ¼�£��� .claude/����Ŀ��·���������Ŀ .claude/ Ŀ¼������ .claude/��
 $typeAgents = @{
     "cpp-qt"    = @{Src=".claude/agents/qt";    Dst="agents/qt";    SrcRules=".claude/rules/qt";    DstRules="rules/qt"}
     "cpp-cmake" = @{Src=".claude/agents/cpp-cmake"; Dst="agents/cpp-cmake"; SrcRules=".claude/rules/cpp-cmake"; DstRules="rules/cpp-cmake"}
     "python"    = @{Src=".claude/agents/python"; Dst="agents/python"; SrcRules=".claude/rules/python"; DstRules="rules/python"}
     "node"      = @{Src=".claude/agents/node";   Dst="agents/node";   SrcRules=".claude/rules/node";   DstRules="rules/node"}
     "rust"      = @{Src=".claude/agents/rust";   Dst="agents/rust";   SrcRules=".claude/rules/rust";   DstRules="rules/rust"}
+    "go"        = @{Src=".claude/agents/go";        Dst="agents/go";        SrcRules=".claude/rules/go";        DstRules="rules/go"}
 }
 
 Write-Progress -Activity "CodeHarness Setup" -Status "Copying type-specific files" -PercentComplete 50
 
 if ($typeAgents.ContainsKey($projectType)) {
     $spec = $typeAgents[$projectType]
-    # 复制 agents
+    # ���� agents
     $srcAgents = Join-Path $SkillDir $spec.Src
     $dstAgents = Join-Path $targetClaude $spec.Dst
     if (Test-Path $srcAgents) {
@@ -109,7 +115,7 @@ if ($typeAgents.ContainsKey($projectType)) {
         $fileCount += $count
         Write-Host "[harness]   Copied agents ($($spec.Src)) -> $dstAgents ($count files)"
     }
-    # 复制 rules
+    # ���� rules
     $srcRules = Join-Path $SkillDir $spec.SrcRules
     $dstRules = Join-Path $targetClaude $spec.DstRules
     if (Test-Path $srcRules) {
@@ -125,34 +131,34 @@ if ($typeAgents.ContainsKey($projectType)) {
 Write-Progress -Activity "CodeHarness Setup" -Status "Generating config" -PercentComplete 80
 
 $configPath = Join-Path $targetClaude "harness/project-config.json"
-$claudeFile = Join-Path $ProjectDir "CLAUDE.md"   # 步骤 6 也会用到，在此统一定义
+$claudeFile = Join-Path $ProjectDir "CLAUDE.md"   # ���� 6 Ҳ���õ����ڴ�ͳһ����
 
-# 如果已存在配置文件，保留用户已有的命令值，仅更新项目类型和检测时间
+# ����Ѵ��������ļ��������û����е�����ֵ����������Ŀ���ͺͼ��ʱ��
 if (Test-Path $configPath) {
     try {
         $existingConfig = Get-Content $configPath -Raw -Encoding utf8 | ConvertFrom-Json
-        # 仅当读取到的命令非空时才保留，否则使用默认值
-        $buildCmd = if ($existingConfig.'build-command') { $existingConfig.'build-command' } else { "cmake --build build --config Debug" }
-        $testCmd = if ($existingConfig.'test-command') { $existingConfig.'test-command' } else { "ctest --test-dir build -C Debug --output-on-failure" }
-        $runCmd = if ($existingConfig.'run-command') { $existingConfig.'run-command' } else { "./build/Backgammon.exe" }
+        # ������ȡ��������ǿ�ʱ�ű��������ʹ��Ĭ��ֵ
+        $buildCmd = if ($existingConfig.'build-command') { $existingConfig.'build-command' } else { "" }
+        $testCmd = if ($existingConfig.'test-command') { $existingConfig.'test-command' } else { "" }
+        $runCmd = if ($existingConfig.'run-command') { $existingConfig.'run-command' } else { "" }
         Write-Host "[harness]   Preserved existing project-config.json commands"
     } catch {
         Write-Host "[harness]   Could not read existing project-config.json, using defaults"
-        $buildCmd = "cmake --build build --config Debug"
-        $testCmd = "ctest --test-dir build -C Debug --output-on-failure"
-        $runCmd = "./build/Backgammon.exe"
+        $buildCmd = ""
+        $testCmd = ""
+        $runCmd = ""
     }
 } else {
-    # 首次安装：从 CLAUDE.md 派生默认命令
-    $buildCmd = "cmake --build build --config Debug"
-    $testCmd = "ctest --test-dir build -C Debug --output-on-failure"
-    $runCmd = "./build/Backgammon.exe"
+    # �״ΰ�װ���� CLAUDE.md ����Ĭ������
+    $buildCmd = ""
+    $testCmd = ""
+    $runCmd = ""
 
     if (Test-Path $claudeFile) {
         $claudeContent = Get-Content $claudeFile -Raw
-        if ($claudeContent -match '(?<=构建命令：`)([^`]+)') { $buildCmd = $matches[1] }
-        if ($claudeContent -match '(?<=测试命令：`)([^`]+)') { $testCmd = $matches[1] }
-        if ($claudeContent -match '(?<=运行命令：`)([^`]+)') { $runCmd = $matches[1] }
+        if ($claudeContent -match '(?<=�������`)([^`]+)') { $buildCmd = $matches[1] }
+        if ($claudeContent -match '(?<=�������`)([^`]+)') { $testCmd = $matches[1] }
+        if ($claudeContent -match '(?<=�������`)([^`]+)') { $runCmd = $matches[1] }
     }
 }
 
@@ -202,7 +208,7 @@ Get-Content .claude/harness/claude-progress.txt -Tail 20 -Encoding UTF8
     }
 }
 
-# === 7. Migration: 检测旧路径状态文件并迁移 ===
+# === 7. Migration: ����·��״̬�ļ���Ǩ�� ===
 Write-Progress -Activity "CodeHarness Setup" -Status "Migrating old state files" -PercentComplete 95
 
 $oldFeatures = Join-Path $targetClaude "harness/features.json"
@@ -223,7 +229,7 @@ if ((Test-Path $oldProgress) -and -not (Test-Path (Join-Path $stateDir "claude-p
     $needsMigration = $true
 }
 if ($needsMigration) {
-    Write-Host "[harness]   状态文件迁移完成。请更新 CLAUDE.md 中的路径引用。"
+    Write-Host "[harness]   State files migrated. Update CLAUDE.md path references."
 }
 
 # === 8. Done ===
@@ -237,3 +243,4 @@ Write-Host "  Elapsed: $($elapsed.TotalSeconds.ToString('0.0'))s"
 Write-Host "============================================"
 Write-Host ""
 Write-Host "Next: run .\.claude\harness\coding-session.ps1 to start working"
+

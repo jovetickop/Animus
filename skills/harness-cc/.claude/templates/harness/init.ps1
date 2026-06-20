@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$ProjectRoot = "."
 )
 
@@ -20,3 +20,4 @@ if (-not (Test-Path $BuildDir)) {
 }
 
 Write-Host "已初始化 harness：$HarnessRoot"
+

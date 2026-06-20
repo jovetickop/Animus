@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$StateDir = ".claude/state"
 )
 
@@ -15,7 +15,7 @@ if (-not (Test-Path $featuresPath)) {
 
 # Read features.json
 try {
-    $data = Get-Content $featuresPath -Raw | ConvertFrom-Json
+    $data = Get-Content $featuresPath -Raw -Encoding UTF8 | ConvertFrom-Json
 } catch {
     Write-Host "FAILED: Cannot parse features.json: $_"
     exit 1
@@ -70,3 +70,4 @@ if ($warnings.Count -gt 0) {
     Write-Host "PASSED: Consistency check OK ($($taskStatus.Count) tasks)"
     exit 0
 }
+

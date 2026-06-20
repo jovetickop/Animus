@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$FeaturesPath = ".claude/state/features.json"
 )
 
@@ -86,3 +86,4 @@ if ($errors.Count -gt 0) {
     Write-Host "PASSED: $($data.Count) tasks, structure validation OK"
     exit 0
 }
+
