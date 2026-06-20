@@ -1,6 +1,6 @@
 # animus-toolkit
 
-jovetickop 的 Claude Code 个人工具包。
+jovetickop 的 Claude Code 个人工具包。包含 22 个技能，详见 README.md。
 
 ## 插件安装
 
@@ -8,9 +8,7 @@ jovetickop 的 Claude Code 个人工具包。
 
 ## 包含的技能
 
-### harness-cc
-
-复杂任务编码工作流。当需要处理编码任务时，此技能会自动激活并引导你完成计划 → 实现 → 验收的完整流程。
+22 个技能，包括 superpowers-zh 中文技能集(20个) 和 harness-cc 编码工作流引擎。完整列表见 README.md。
 
 ---
 
