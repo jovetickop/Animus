@@ -4,15 +4,31 @@ JiangJie 的 Claude Code 个人工具包。
 
 ## 包含的内容
 
-### harness-cc — 编码工作流引擎
-支持 C++/Qt、Python、Node.js、Rust 的完整开发闭环。自动拆解复杂任务为可执行步骤，按状态机逐个推进，验收后提交。
+### Skills
 
-### statusline — 状态栏
-显示当前 session、模型名、工作目录、上下文余量百分比、Vim 模式。无外部依赖，无需安装 jq。
+| 技能 | 说明 | 路径 |
+|------|------|------|
+| **harness-cc** | 编码工作流引擎。输入 PRD+方案文档，自动拆解为可执行任务列表，按状态机逐个推进，验收后提交。支持 C++/Qt、Python、Node.js、Rust、Go。 | `skills/harness-cc/SKILL.md` |
+| **tdd-workflow** | TDD 工作流子技能，通过 `/tdd-workflow` 显式调用。 | `skills/harness-cc/.claude/skills/tdd-workflow/SKILL.md` |
+
+### Hooks
+
+| 名称 | 说明 | 依赖 |
+|------|------|------|
+| **statusline** | 底部状态栏，显示 session 名称、模型名、工作目录、上下文余量百分比、Vim 模式。使用 grep/sed 解析 JSON，无需安装 jq。 | 无 |
 
 ### 配置模板
-- `settings.template.json` — Claude Code 通用配置模板
-- `mcp.template.json` — MCP 服务器配置示例
+
+| 文件 | 说明 |
+|------|------|
+| `config-templates/settings.template.json` | Claude Code 通用配置模板（中文语言、Workflows、环境变量等） |
+| `config-templates/mcp.template.json` | MCP 服务器配置示例框架 |
+
+### 脚本
+
+| 文件 | 说明 |
+|------|------|
+| `scripts/setup.ps1` | Windows 自动配置脚本。自动检测插件路径，写入 statusLine 配置到 settings.json。如已有配置，逐项询问是否覆盖。 |
 
 ## 开发者指南
 
