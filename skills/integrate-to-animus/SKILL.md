@@ -104,7 +104,7 @@ skills/<name>/
    ```
    集成已完成。是否执行 git add + commit？（y/n）
    ```
-   - 用户确认后执行：`git add . && git commit -m "feat: integrate <AA> into plugin package (v<新版本>)"`
+   - 用户确认后执行：`git add . && git commit -m "feat: 集成 <AA> 到插件包 (v<新版本>)"`
    - 用户拒绝则跳过，提示用户后续可手动提交
 
 2. **询问是否推送到远程：**
