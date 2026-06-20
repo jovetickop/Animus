@@ -1,6 +1,6 @@
 # animus-toolkit
 
-jovetickop 的 Claude Code 个人工具包。包含 **22 个技能**（20 个 superpowers-zh 中文技能 + harness-cc 编码工作流引擎 + tdd-workflow），statusline 状态栏，以及配置模板。
+jovetickop 的 Claude Code 个人工具包。包含 **23 个技能**（20 个 superpowers-zh 中文技能 + harness-cc 编码工作流引擎 + tdd-workflow + planning-with-files 计划管理），statusline 状态栏，以及配置模板。
 
 ## 包含的内容
 
@@ -21,6 +21,7 @@ jovetickop 的 Claude Code 个人工具包。包含 **22 个技能**（20 个 su
 
 | 技能 | 说明 | 路径 |
 |------|------|------|
+| **planning-with-files** | Manus 风格的文件式计划管理。创建 task_plan.md、findings.md、progress.md 组织追踪任务进度。支持 `/clear` 后自动恢复会话。 | `skills/planning-with-files/SKILL.md` |
 | **writing-plans** | 在动手写代码之前根据规格或需求创建实现计划。 | `skills/superpowers-zh/writing-plans/SKILL.md` |
 | **executing-plans** | 在单独的会话中执行含审查检查点的实现计划。 | `skills/superpowers-zh/executing-plans/SKILL.md` |
 | **subagent-driven-development** | 在当前会话中执行包含独立任务的实现计划。 | `skills/superpowers-zh/subagent-driven-development/SKILL.md` |
