@@ -1,6 +1,6 @@
 # animus-toolkit
 
-JiangJie 的 Claude Code 个人工具包。
+jovetickop 的 Claude Code 个人工具包。
 
 ## 包含的内容
 
@@ -40,7 +40,7 @@ JiangJie 的 Claude Code 个人工具包。
 ### 方式一：通过 GitHub 市场（推荐）
 
 ```bash
-/plugin marketplace add JiangJie/animus-toolkit
+/plugin marketplace add jovetickop/Animus
 /plugin install animus-toolkit@animus-toolkit-marketplace
 ```
 
@@ -60,7 +60,7 @@ JiangJie 的 Claude Code 个人工具包。
 "animus-toolkit": {
   "source": {
     "source": "url",
-    "url": "https://github.com/JiangJie/animus-toolkit.git"
+    "url": "https://github.com/jovetickop/Animus.git"
   }
 }
 ```

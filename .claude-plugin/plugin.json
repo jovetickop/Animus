@@ -1,12 +1,12 @@
 {
   "name": "animus-toolkit",
-  "description": "JiangJie 的个人工具包：harness-cc 编码工作流引擎 + statusline 状态栏 + 通用配置模板",
+  "description": "jovetickop 的个人工具包：harness-cc 编码工作流引擎 + statusline 状态栏 + 通用配置模板",
   "version": "1.0.0",
   "author": {
-    "name": "JiangJie"
+    "name": "jovetickop"
   },
-  "homepage": "https://github.com/JiangJie/animus-toolkit",
-  "repository": "https://github.com/JiangJie/animus-toolkit",
+  "homepage": "https://github.com/jovetickop/Animus",
+  "repository": "https://github.com/jovetickop/Animus",
   "license": "MIT",
   "keywords": ["skills", "workflow", "harness", "statusline", "coding"]
 }

@@ -118,8 +118,8 @@ Thumbs.db
   "author": {
     "name": "你的名字"
   },
-  "homepage": "https://github.com/你的用户名/my-plugin",
-  "repository": "https://github.com/你的用户名/my-plugin",
+  "homepage": "https://github.com/jovetickop/Animus",
+  "repository": "https://github.com/jovetickop/Animus",
   "license": "MIT",
   "keywords": ["skills", "your-keyword"]
 }

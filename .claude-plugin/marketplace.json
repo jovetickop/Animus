@@ -1,8 +1,8 @@
 {
   "name": "animus-toolkit-marketplace",
-  "description": "JiangJie 的 Claude Code 插件市场 - 提供编码工作流技能、状态栏、配置模板",
+  "description": "jovetickop 的 Claude Code 插件市场 - 提供编码工作流技能、状态栏、配置模板",
   "owner": {
-    "name": "JiangJie"
+    "name": "jovetickop"
   },
   "plugins": [
     {

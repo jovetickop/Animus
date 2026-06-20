@@ -1,6 +1,6 @@
 # animus-toolkit
 
-JiangJie 的 Claude Code 个人工具包。
+jovetickop 的 Claude Code 个人工具包。
 
 ## 插件安装
 
