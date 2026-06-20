@@ -156,3 +156,16 @@ powershell -File ~/.claude/plugins/cache/animus-toolkit-marketplace/animus-toolk
 ## 许可证
 
 MIT
+
+---
+
+## 来源声明
+
+本插件包含以下第三方内容：
+
+| 内容 | 来源 | 协议 | 版权 |
+|------|------|------|------|
+| **superpowers-zh**（20 个中文技能） | [jnMetaCode/superpowers-zh](https://github.com/jnMetaCode/superpowers-zh) | MIT | Copyright (c) 2026 jnMetaCode |
+| **harness-cc** | [jovetickop/Harness-CC](https://github.com/jovetickop/Harness-CC.git) | MIT | 见技能目录内 LICENSE |
+
+各技能的完整许可证文件分别位于对应技能目录中。
