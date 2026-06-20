@@ -10,3 +10,12 @@
 *~
 .DS_Store
 Thumbs.db
+
+# Build artifacts
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+dist/
+*.egg-info/
