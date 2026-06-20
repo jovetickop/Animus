@@ -370,7 +370,9 @@ config-templates/
 2. **冲突检测**：如果用户已有相同配置，询问保留还是覆盖
 3. **逐项处理**：每个配置项单独询问，避免批量覆盖
 
-### 7.2 setup.ps1 示例
+### 7.2 setup.ps1 示例（旧版，不推荐使用）
+
+> **注意**：以下为早期版本的字符串替换示例，容易出错（括号嵌套、逗号残留等）。推荐使用 7.3 节的 PSObject 方法。
 
 ```powershell
 # setup.ps1 — 自动配置脚本
@@ -413,7 +415,7 @@ foreach ($key in $envVars.Keys) {
 if ($modified) {
   # 使用 ConvertFrom-Json / ConvertTo-Json 确保格式正确
   $jsonObj = $content | ConvertFrom-Json
-  $json | ConvertTo-Json -Depth 10 | Set-Content $settingsPath
+  $jsonObj | ConvertTo-Json -Depth 10 | Set-Content $settingsPath
 }
 ```
 
@@ -538,7 +540,9 @@ Permission is hereby granted...
 ```bash
 # 使用 Node.js 验证
 node -e "JSON.parse(require('fs').readFileSync('.claude-plugin/plugin.json','utf8')); console.log('OK')"
-node -e "JSON.parse(require('fs').readFileSync('.claude-plugin/marketplace.json','utf8')); console.log('OK')"
+
+# 或使用 PowerShell 验证
+powershell -c "Get-Content .claude-plugin/plugin.json | ConvertFrom-Json | Out-Null; Write-Host 'OK'"
 ```
 
 ---

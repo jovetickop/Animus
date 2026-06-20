@@ -23,6 +23,7 @@ JiangJie 的 Claude Code 个人工具包。
 |------|------|
 | `config-templates/settings.template.json` | Claude Code 通用配置模板（中文语言、Workflows、环境变量等） |
 | `config-templates/mcp.template.json` | MCP 服务器配置示例框架 |
+| `config-templates/README.md` | 配置模板使用说明 |
 
 ### 脚本
 
@@ -74,6 +75,7 @@ JiangJie 的 Claude Code 个人工具包。
 
 ```bash
 # Windows
+# 路径中的 1.0.0 请替换为实际安装的版本号
 powershell -File ~/.claude/plugins/cache/animus-toolkit-marketplace/animus-toolkit/1.0.0/scripts/setup.ps1
 ```
 
@@ -94,7 +96,7 @@ powershell -File ~/.claude/plugins/cache/animus-toolkit-marketplace/animus-toolk
 /plugin list
 ```
 
-列表中显示 `animus-toolkit@animus-toolkit-marketplace` 即为安装成功。
+列表中显示 `animus-toolkit@animus-toolkit-marketplace` 即为安装成功。如果未显示，请执行 `/reload-plugins` 或重启 Claude Code。
 
 ## 更新
 
