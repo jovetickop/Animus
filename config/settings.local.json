@@ -1,0 +1,10 @@
+{
+  "statusLine": {
+    "command": "node \"$CLAUDE_PLUGIN_ROOT/plugins/claude-hud/dist/index.js\"",
+    "type": "command"
+  },
+  "enabledPlugins": {
+    "animus@animus-marketplace": true,
+    "claude-hud@claude-hud": true
+  }
+}

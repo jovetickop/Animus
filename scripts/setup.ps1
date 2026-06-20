@@ -116,3 +116,13 @@ if ($modified) {
 
 Write-Host "`n=== 配置完成 ===" -ForegroundColor Cyan
 Write-Host "请重启 Claude Code 或执行 /reload-plugins 使配置生效"
+
+# 4. 部署插件公共配置到 settings.local.json
+$localConfigPath = "$pluginDir\config\settings.local.json"
+$localTargetPath = "$env:USERPROFILE\.claude\settings.local.json"
+if (Test-Path $localConfigPath) {
+  Copy-Item $localConfigPath $localTargetPath -Force
+  Write-Host "  ✅ 公共配置已部署到 $localTargetPath" -ForegroundColor Green
+} else {
+  Write-Host "  ⚠️  未找到公共配置模板：$localConfigPath" -ForegroundColor Yellow
+}
