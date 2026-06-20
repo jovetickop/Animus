@@ -8,7 +8,7 @@
     {
       "name": "animus-toolkit",
       "description": "包含 superpowers-zh 中文技能集(20个)、harness-cc 编码工作流引擎、planning-with-files 计划管理、statusline 状态栏、通用配置模板和 MCP 配置",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "source": "./"
     }
   ]
