@@ -16,6 +16,8 @@ JiangJie 的 Claude Code 个人工具包。
 
 # 开发者指南
 
+完整的插件开发、发布、更新指南请参见 [docs/plugin-development-guide.md](docs/plugin-development-guide.md)。
+
 ## 新增技能
 
 1. 将本地技能复制到仓库：`cp -r ~/.claude/skills/<name>/ skills/<name>/`

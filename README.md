@@ -14,6 +14,10 @@ JiangJie 的 Claude Code 个人工具包。
 - `settings.template.json` — Claude Code 通用配置模板
 - `mcp.template.json` — MCP 服务器配置示例
 
+## 开发者指南
+
+详细的插件开发、发布、更新指南请参见 [docs/plugin-development-guide.md](docs/plugin-development-guide.md)。
+
 ## 安装指南
 
 ### 方式一：通过 GitHub 市场（推荐）
@@ -57,7 +61,16 @@ JiangJie 的 Claude Code 个人工具包。
 powershell -File ~/.claude/plugins/cache/animus-toolkit-marketplace/animus-toolkit/1.0.0/scripts/setup.ps1
 ```
 
-脚本会自动检测插件路径并写入配置到 `settings.json`。如果已有 statusLine 配置，会询问是否覆盖。
+脚本会自动检测插件路径并写入配置到 `settings.json`。如果已有 statusLine、环境变量等配置，会逐项询问是否覆盖。
+
+> Mac/Linux 用户：请手动在 `~/.claude/settings.json` 中添加以下配置：
+> ```json
+> "statusLine": {
+>   "command": "bash ~/.claude/plugins/cache/animus-toolkit-marketplace/animus-toolkit/1.0.0/hooks/statusline.sh",
+>   "type": "command"
+> }
+> ```
+> 将路径中的 `1.0.0` 替换为实际安装的版本号。
 
 ## 验证安装
 
