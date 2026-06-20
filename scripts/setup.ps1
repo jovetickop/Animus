@@ -80,13 +80,8 @@ foreach ($key in $envVars.Keys) {
 }
 
 # 3. 启用插件
-# 检测 enabledPlugins 是否为数组（用户误操作）
-if ($jsonObj.enabledPlugins -is [Array]) {
-  Write-Host "  ⚠️  enabledPlugins 是数组而非对象，将重置为空对象" -ForegroundColor Yellow
-  $jsonObj.enabledPlugins = @{ } -as [PSCustomObject]
-  $modified = $true
-}
-if (-not $jsonObj.enabledPlugins) {
+# enabledPlugins 为数组时（旧格式/误操作），重置为空对象
+if (-not $jsonObj.enabledPlugins -or $jsonObj.enabledPlugins -is [Array]) {
   $jsonObj | Add-Member -NotePropertyName "enabledPlugins" -NotePropertyValue (@{ } -as [PSCustomObject]) -Force
 }
 
@@ -113,7 +108,7 @@ if ($null -eq $existingPluginState) {
 
 # 写回文件
 if ($modified) {
-  $jsonObj | ConvertTo-Json -Depth 20 | Set-Content $settingsPath -Encoding UTF8
+  $jsonObj | ConvertTo-Json -Depth 5 | Set-Content $settingsPath -Encoding UTF8
   Write-Host "`n✅ 配置已更新到 $settingsPath" -ForegroundColor Green
 } else {
   Write-Host "`n⏭️  无需修改" -ForegroundColor Yellow
