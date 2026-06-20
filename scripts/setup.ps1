@@ -3,7 +3,7 @@
 
 $pluginDir = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
 $settingsPath = "$env:USERPROFILE\.claude\settings.json"
-$statuslinePath = "$pluginDir\hooks\statusline.sh"
+$claudeHudCommand = "node `"`$CLAUDE_PLUGIN_ROOT/plugins/claude-hud/dist/index.js`""
 
 Write-Host "=== animus 自动配置 ===" -ForegroundColor Cyan
 Write-Host "检测到插件安装路径: $pluginDir`n"
@@ -29,7 +29,7 @@ if ($jsonObj.statusLine) {
   $choice = Read-Host "检测到已有 statusLine 配置，是否覆盖为插件版本？(y=覆盖/n=保留) [n]"
   if ($choice -eq 'y') {
     $jsonObj.statusLine = @{
-      command = "bash $($statuslinePath -replace '\\', '/')"
+      command = $claudeHudCommand
       type = "command"
     }
     $modified = $true
@@ -39,7 +39,7 @@ if ($jsonObj.statusLine) {
   }
 } else {
   $jsonObj | Add-Member -NotePropertyName "statusLine" -NotePropertyValue @{
-    command = "bash $($statuslinePath -replace '\\', '/')"
+    command = $claudeHudCommand
     type = "command"
   } -Force
   $modified = $true

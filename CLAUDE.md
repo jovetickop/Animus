@@ -1,6 +1,6 @@
 # animus
 
-jovetickop 的 Claude Code 个人工具包。包含 33 个技能，详见 README.md。
+jovetickop 的 Claude Code 个人工具包。包含 32 个技能，详见 README.md。
 
 ## 插件安装
 
@@ -8,7 +8,7 @@ jovetickop 的 Claude Code 个人工具包。包含 33 个技能，详见 README
 
 ## 包含的技能
 
-33 个技能，完整列表见 README.md。
+32 个技能，完整列表见 README.md。
 
 ---
 

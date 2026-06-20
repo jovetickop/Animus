@@ -16,7 +16,7 @@ metadata:
 
 **开始时宣布：** "我正在使用 executing-plans 技能来实现此计划。"
 
-**注意：** 告诉你的人类伙伴，Superpowers 在有子代理支持时效果好得多。如果在支持子代理的平台上运行（如 Claude Code 或 Codex），其工作质量会显著提高。如果子代理可用，请使用 superpowers:subagent-driven-development 而非此技能。
+**注意：** 告诉你的人类伙伴，Superpowers 在有子代理支持时效果好得多。如果在支持子代理的平台上运行（如 Claude Code 或 Codex），其工作质量会显著提高。如果子代理可用，请使用 subagent-driven-development 而非此技能。
 
 ## 流程
 
@@ -115,7 +115,7 @@ $ git commit -m "feat: 添加用户输入验证（任务 2/5）"
 
 所有任务完成并验证后：
 - 宣布："我正在使用 finishing-a-development-branch 技能来完成此工作。"
-- **必需子技能：** 使用 superpowers:finishing-a-development-branch
+- **必需子技能：** 使用 finishing-a-development-branch
 - 按照该技能的指引验证测试、展示选项、执行选择
 
 **完成报告模板：**
@@ -175,6 +175,6 @@ $ git commit -m "feat: 添加用户输入验证（任务 2/5）"
 ## 集成
 
 **必需的工作流技能：**
-- **superpowers:using-git-worktrees** - 必需：开始前建立隔离的工作空间
-- **superpowers:writing-plans** - 创建此技能要执行的计划
-- **superpowers:finishing-a-development-branch** - 所有任务完成后收尾开发
+- **using-git-worktrees** - 必需：开始前建立隔离的工作空间
+- **writing-plans** - 创建此技能要执行的计划
+- **finishing-a-development-branch** - 所有任务完成后收尾开发

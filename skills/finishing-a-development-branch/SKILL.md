@@ -48,6 +48,7 @@ npm test / cargo test / pytest / go test ./...
 **在展示选项之前，先确定工作区状态：**
 
 ```bash
+# 以下命令需在 Git Bash 中运行，Windows cmd/PowerShell 用户请用 Git Bash
 GIT_DIR=$(cd "$(git rev-parse --git-dir)" 2>/dev/null && pwd -P)
 GIT_COMMON=$(cd "$(git rev-parse --git-common-dir)" 2>/dev/null && pwd -P)
 ```
@@ -182,6 +183,7 @@ git branch -D <feature-branch>
 **只对选项 1 和 4 执行。** 选项 2 和 3 始终保留 worktree。
 
 ```bash
+# 以下命令需在 Git Bash 中运行，Windows cmd/PowerShell 用户请用 Git Bash
 GIT_DIR=$(cd "$(git rev-parse --git-dir)" 2>/dev/null && pwd -P)
 GIT_COMMON=$(cd "$(git rev-parse --git-common-dir)" 2>/dev/null && pwd -P)
 WORKTREE_PATH=$(git rev-parse --show-toplevel)

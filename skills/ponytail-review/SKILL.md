@@ -8,6 +8,8 @@ description: >
   delete", "is this over-engineered", "simplify review", or invokes
   /ponytail-review. Complements correctness-focused review, this one only
   hunts complexity.
+version: "1.0.0"
+license: MIT
 ---
 
 Review diffs for unnecessary complexity. One line per finding: location, what

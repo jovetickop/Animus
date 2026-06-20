@@ -7,6 +7,8 @@ description: >
   codebase", "audit for over-engineering", "what can I delete from this repo",
   "find bloat", "ponytail-audit", or "/ponytail-audit". One-shot report, does
   not apply fixes.
+version: "1.0.0"
+license: MIT
 ---
 
 ponytail-review, repo-wide. Scan the whole tree instead of a diff. Rank

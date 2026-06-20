@@ -66,7 +66,7 @@ digraph process {
     "读取计划，提取所有任务的完整文本，记录上下文，创建 TodoWrite" [shape=box];
     "还有剩余任务?" [shape=diamond];
     "分派最终代码审查子智能体审查整体实现" [shape=box];
-    "使用 superpowers:finishing-a-development-branch" [shape=box style=filled fillcolor=lightgreen];
+    "使用 finishing-a-development-branch" [shape=box style=filled fillcolor=lightgreen];
 
     "读取计划，提取所有任务的完整文本，记录上下文，创建 TodoWrite" -> "分派实现子智能体 (./implementer-prompt.md)";
     "分派实现子智能体 (./implementer-prompt.md)" -> "实现子智能体有疑问?";
@@ -85,7 +85,7 @@ digraph process {
     "在 TodoWrite 中标记任务完成" -> "还有剩余任务?";
     "还有剩余任务?" -> "分派实现子智能体 (./implementer-prompt.md)" [label="是"];
     "还有剩余任务?" -> "分派最终代码审查子智能体审查整体实现" [label="否"];
-    "分派最终代码审查子智能体审查整体实现" -> "使用 superpowers:finishing-a-development-branch";
+    "分派最终代码审查子智能体审查整体实现" -> "使用 finishing-a-development-branch";
 }
 ```
 
@@ -270,13 +270,13 @@ digraph process {
 ## 集成
 
 **必需的工作流技能：**
-- **superpowers:using-git-worktrees** - 必需：在开始前建立隔离工作区
-- **superpowers:writing-plans** - 创建本技能执行的计划
-- **superpowers:requesting-code-review** - 审查子智能体的代码审查模板
-- **superpowers:finishing-a-development-branch** - 所有任务完成后收尾
+- **using-git-worktrees** - 必需：在开始前建立隔离工作区
+- **writing-plans** - 创建本技能执行的计划
+- **requesting-code-review** - 审查子智能体的代码审查模板
+- **finishing-a-development-branch** - 所有任务完成后收尾
 
 **子智能体应使用：**
-- **superpowers:test-driven-development** - 子智能体对每个任务遵循 TDD
+- **test-driven-development** - 子智能体对每个任务遵循 TDD
 
 **替代工作流：**
-- **superpowers:executing-plans** - 用于并行会话而非同会话执行
+- **executing-plans** - 用于并行会话而非同会话执行

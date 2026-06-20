@@ -1,6 +1,8 @@
 ---
 name: "doc"
 description: "Use when the task involves reading, creating, or editing `.docx` documents, especially when formatting or layout fidelity matters; prefer `python-docx` plus the bundled `scripts/render_docx.py` for visual checks."
+version: "1.0.0"
+license: Apache-2.0
 ---
 
 
