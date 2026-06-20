@@ -1,5 +1,17 @@
 # 更新日志
 
+## 1.6.0 (2026-06-20 16:44)
+
+### 新增
+- ponytail 代码精简（6个技能）：6 步懒惰阶梯（YAGNI→Stdlib→Platform→Installed Dep→One Line→Minimum），让 AI 只写必要代码
+- ponytail hooks 系统：SessionStart 自动注入精简规则 + UserPromptSubmit 追踪模式切换
+
+### 变更
+- 更新元数据版本号至 1.6.0
+- 技能总数更新至 31 个
+
+---
+
 ## 1.5.0 (2026-06-20 15:36)
 
 ### 新增

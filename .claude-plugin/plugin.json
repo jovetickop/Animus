@@ -1,12 +1,13 @@
 {
   "name": "animus",
-  "description": "jovetickop 的个人工具包：superpowers-zh 中文技能集(20个) + harness-cc 编码工作流引擎 + planning-with-files 计划管理 + claude-hud 状态栏 + doc/pptx 文档处理 + 配置模板",
-  "version": "1.5.0",
+  "description": "jovetickop 的个人工具包：superpowers-zh 中文技能集（20 个） + harness-cc 编码工作流引擎 + planning-with-files 计划管理 + claude-hud 状态栏 + doc/pptx 文档处理 + ponytail 代码精简 + 配置模板",
+  "version": "1.6.0",
   "author": {
     "name": "jovetickop"
   },
   "homepage": "https://github.com/jovetickop/Animus",
   "repository": "https://github.com/jovetickop/Animus",
   "license": "MIT",
-  "keywords": ["skills", "chinese", "workflow", "planning", "harness", "claude-hud", "coding", "superpowers", "doc", "pptx", "debugging", "tdd", "code-review", "mcp", "brainstorming"]
+  "hooks": "./hooks/claude-codex-hooks.json",
+  "keywords": ["skills", "chinese", "workflow", "planning", "harness", "claude-hud", "coding", "superpowers", "doc", "pptx", "debugging", "tdd", "code-review", "mcp", "brainstorming", "ponytail", "lazy", "minimal"]
 }

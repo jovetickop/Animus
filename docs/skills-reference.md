@@ -1,6 +1,6 @@
 # 技能列表
 
-animus 包含 25 个技能，覆盖核心工作流、开发流程管理、代码审查与协作、中文规范、工具与基础设施。
+animus 包含 31 个技能，覆盖核心工作流、开发流程管理、代码审查与协作、中文规范、工具与基础设施、代码精简。
 
 ## 核心工作流
 
@@ -57,3 +57,14 @@ animus 包含 25 个技能，覆盖核心工作流、开发流程管理、代码
 |------|------|------|
 | **doc** | 创建、编辑和审查 `.docx` 文档，支持 python-docx 编程化操作和视觉渲染验证。 | `skills/doc/SKILL.md` |
 | **pptx** | 创建、编辑和审查 `.pptx` 演示文稿，支持模板编辑、pptxgenjs 创建、缩略图预览和视觉 QA。 | `skills/pptx/SKILL.md` |
+
+## 代码精简
+
+| 技能 | 说明 | 路径 |
+|------|------|------|
+| **ponytail** | 懒惰 senior 开发者模式。强制最简方案：YAGNI→标准库→平台特性→已有依赖→一行→最少代码。支持 lite/full/ultra 三级强度。 | `skills/ponytail/SKILL.md` |
+| **ponytail-review** | 用"懒惰"标准 Review 代码，找出过度工程和不必要依赖。 | `skills/ponytail-review/SKILL.md` |
+| **ponytail-audit** | 审计整个代码库的过度工程、不必要的抽象和膨胀的依赖。 | `skills/ponytail-audit/SKILL.md` |
+| **ponytail-debt** | 分析技术债务，识别因过度工程导致的维护负担。 | `skills/ponytail-debt/SKILL.md` |
+| **ponytail-gain** | 分析何处可以安全地移除代码——每个文件一行，优先删除未使用的导出。 | `skills/ponytail-gain/SKILL.md` |
+| **ponytail-help** | 显示 Ponytail 插件帮助信息，包括模式说明、命令列表和集成指南。 | `skills/ponytail-help/SKILL.md` |
