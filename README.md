@@ -1,6 +1,6 @@
 # animus
 
-jovetickop 的 Claude Code 个人工具包。包含 **27 个技能**（20 个 superpowers-zh 中文技能 + harness-cc 编码工作流引擎 + tdd-workflow + planning-with-files 计划管理 + linear-automation Linear项目管理 + doc 文档处理 + pptx 演示文稿 + integrate-to-animus 集成工具）以及配置模板。
+jovetickop 的 Claude Code 个人工具包。包含 **26 个技能**（20 个 superpowers-zh 中文技能 + harness-cc 编码工作流引擎 + tdd-workflow + planning-with-files 计划管理 + doc 文档处理 + pptx 演示文稿 + integrate-to-animus 集成工具）以及配置模板。
 
 ## 架构
 
@@ -45,7 +45,6 @@ animus 将个人开发工具打包为标准 Claude Code 插件：
 | **superpowers-zh**（20 个中文技能） | [jnMetaCode/superpowers-zh](https://github.com/jnMetaCode/superpowers-zh) | MIT | Copyright (c) 2026 jnMetaCode |
 | **harness-cc**（含 tdd-workflow） | [jovetickop/Harness-CC](https://github.com/jovetickop/Harness-CC.git) | MIT | 见源仓库 LICENSE |
 | **planning-with-files** | [OthmanAdi/planning-with-files](https://github.com/OthmanAdi/planning-with-files) | MIT | Copyright (c) 2026 OthmanAdi |
-| **linear-automation** | 自研技能 | MIT | Copyright (c) 2026 jovetickop |
 | **doc** | Claude Code Skills Registry | Apache 2.0 | Anthropic |
 | **pptx** | Claude Code Skills Registry | Proprietary | Anthropic |
 
