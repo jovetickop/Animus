@@ -40,7 +40,7 @@ setup 脚本会将 `config/settings.local.json` 拷贝到 `~/.claude/settings.lo
   "model": "haiku",
   "env": {
     "ANTHROPIC_BASE_URL": "http://127.0.0.1:15721",
-    "ANTHROPIC_AUTH_TOKEN": "your-token",
+    "ANTHROPIC_AUTH_TOKEN": "YOUR_API_TOKEN_HERE",
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-haiku-4-5"
   },
   "permissions": {
@@ -55,6 +55,17 @@ setup 脚本会将 `config/settings.local.json` 拷贝到 `~/.claude/settings.lo
 
 ## 多设备场景
 
-1. 每台设备安装 animus 插件
-2. 运行 setup 脚本 → 公共配置自动生效
-3. 每台设备独立配置 `settings.json`（model、API keys 等按设备设置）
+假设有两台开发机，使用相同的 animus 插件配置：
+
+**设备 A（首次安装）：**
+1. 安装 animus 插件（`/plugin marketplace add jovetickop/Animus`）
+2. 运行 setup 脚本使公共配置生效
+3. 配置 `~/.claude/settings.json`（按设备设置 model、API keys 等）
+4. 完成，插件相关配置自动生效
+
+**设备 B（新设备）：**
+1. 安装 animus 插件
+2. 运行 setup 脚本 → `settings.local.json` 与设备 A 保持一致的公共配置
+3. 配置 `settings.json` 中的私有部分（API 端点、token 等因网络环境而异）
+
+> **注意：** `setup.ps1` 采用合并模式，只更新 `statusLine` 和 `enabledPlugins` 两个字段，不会覆盖 `settings.local.json` 中的其他自定义内容。
