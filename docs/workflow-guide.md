@@ -1,8 +1,8 @@
-# 开发工作流指南 — animus-toolkit
+# 开发工作流指南 — animus
 
 ## 概述
 
-**animus-toolkit** 是一个面向 Claude Code 的中文开发工作流插件包，包含 24 个技能，覆盖从需求探索、设计规划、编码实现、调试修复到审查交付的完整开发生命周期。本文档帮助你理解这些技能如何组合使用，在不同场景下选择最合适的路径。
+**animus** 是一个面向 Claude Code 的中文开发工作流插件包，包含 24 个技能，覆盖从需求探索、设计规划、编码实现、调试修复到审查交付的完整开发生命周期。本文档帮助你理解这些技能如何组合使用，在不同场景下选择最合适的路径。
 
 ---
 
@@ -128,7 +128,7 @@ flowchart TD
 | **chinese-commit-conventions** | 中文 Conventional Commits 配置规范，仅在以 `/chinese-commit-conventions` 命令调用时触发 | 提交代码时 |
 | **chinese-git-workflow** | 国内 Git 平台（Gitee、Coding.net 等）的配置参考，仅在以 `/chinese-git-workflow` 命令调用时触发 | 项目初始化 |
 | **writing-skills** | 创建、编辑和优化技能，包括评估测试 | 扩展插件包、自定义技能 |
-| **integrate-to-animus** | 将新技能、工具或配置集成到 animus-toolkit 插件包中 | 扩展插件包 |
+| **integrate-to-animus** | 将新技能、工具或配置集成到 animus 插件包中 | 扩展插件包 |
 
 ---
 
@@ -325,6 +325,6 @@ flowchart TD
 
 ## 相关资源
 
-- [插件开发指南](./plugin-development-guide.md) — 如何扩展和发布 animus-toolkit
+- [插件开发指南](./plugin-development-guide.md) — 如何扩展和发布 animus
 - [配置模板](../config-templates/) — settings.json 和 MCP 配置示例
 - [安装脚本](../scripts/setup.ps1) — 自动配置脚本

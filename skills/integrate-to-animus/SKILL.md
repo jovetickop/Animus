@@ -1,6 +1,6 @@
 ---
 name: integrate-to-animus
-description: 当用户要求将新的技能/工具/配置集成到 animus-toolkit 插件包时使用。例如"把XXX集成到插件包中"、"添加YYY到插件"、"把ZZZ打包到工具包"
+description: 当用户要求将新的技能/工具/配置集成到 animus 插件包时使用。例如"把XXX集成到插件包中"、"添加YYY到插件"、"把ZZZ打包到工具包"
 version: "1.0.0"
 license: MIT
 ---
@@ -9,7 +9,7 @@ license: MIT
 
 ## 概述
 
-将新内容（技能、工具、配置等）自动化集成到 animus-toolkit 插件包中，从确认来源到更新文档的完整工作流。
+将新内容（技能、工具、配置等）自动化集成到 animus 插件包中，从确认来源到更新文档的完整工作流。
 
 ## 工作流程
 

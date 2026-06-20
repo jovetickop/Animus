@@ -1,4 +1,4 @@
-# animus-toolkit
+# animus
 
 jovetickop 的 Claude Code 个人工具包。包含 25 个技能，详见 README.md。
 

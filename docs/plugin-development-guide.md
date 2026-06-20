@@ -1,6 +1,6 @@
 # Claude Code 插件开发与发布指南
 
-以 `animus-toolkit` 为实例，从头到尾教你创建一个 Claude Code 插件并发布到 GitHub。
+以 `animus` 为实例，从头到尾教你创建一个 Claude Code 插件并发布到 GitHub。
 
 ---
 
@@ -58,9 +58,9 @@ my-plugin/
 | 术语 | 说明 |
 |------|------|
 | **marketplace** | 插件市场，一个 GitHub 仓库就是一个市场 |
-| **marketplace name** | 市场名称，如 `animus-toolkit-marketplace` |
+| **marketplace name** | 市场名称，如 `animus-marketplace` |
 | **plugin** | 市场里包含的插件 |
-| **plugin key** | 安装标识，格式 `插件名@市场名`，如 `animus-toolkit@animus-toolkit-marketplace` |
+| **plugin key** | 安装标识，格式 `插件名@市场名`，如 `animus@animus-marketplace` |
 | **source: "./"** | 表示插件源码就在仓库根目录 |
 | **CLAUDE_PLUGIN_ROOT** | 环境变量，指向插件当前版本的缓存安装路径 |
 

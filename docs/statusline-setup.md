@@ -2,7 +2,7 @@
 
 ## 概述
 
-animus-toolkit 提供了一个 `statusline.sh` 钩子脚本，用于在 Claude Code 底部显示状态栏。状态栏包含以下信息：
+animus 提供了一个 `statusline.sh` 钩子脚本，用于在 Claude Code 底部显示状态栏。状态栏包含以下信息：
 
 - Session 名称
 - 模型名
@@ -19,7 +19,7 @@ animus-toolkit 提供了一个 `statusline.sh` 钩子脚本，用于在 Claude C
 ```bash
 # Windows
 # 路径中的 <版本号> 请替换为实际安装的版本号（如 1.0.0）
-powershell -File ~/.claude/plugins/cache/animus-toolkit-marketplace/animus-toolkit/<版本号>/scripts/setup.ps1
+powershell -File ~/.claude/plugins/cache/animus-marketplace/animus/<版本号>/scripts/setup.ps1
 ```
 
 脚本会自动检测插件路径并写入配置到 `settings.json`。如果已有 `statusLine`、环境变量等配置，会逐项询问是否覆盖。
@@ -30,7 +30,7 @@ powershell -File ~/.claude/plugins/cache/animus-toolkit-marketplace/animus-toolk
 
 ```json
 "statusLine": {
-  "command": "bash ~/.claude/plugins/cache/animus-toolkit-marketplace/animus-toolkit/<版本号>/hooks/statusline.sh",
+  "command": "bash ~/.claude/plugins/cache/animus-marketplace/animus/<版本号>/hooks/statusline.sh",
   "type": "command"
 }
 ```
@@ -46,7 +46,7 @@ powershell -File ~/.claude/plugins/cache/animus-toolkit-marketplace/animus-toolk
 | 问题 | 解决方法 |
 |------|---------|
 | 底部不显示状态栏 | 运行 `setup.ps1`，或检查 `settings.json` 中 `statusLine` 配置是否正确 |
-| 路径不对 | 确认 `~/.claude/plugins/cache/animus-toolkit-marketplace/animus-toolkit/` 下的版本号目录名 |
+| 路径不对 | 确认 `~/.claude/plugins/cache/animus-marketplace/animus/` 下的版本号目录名 |
 
 ## 脚本源码
 

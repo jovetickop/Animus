@@ -1,12 +1,12 @@
 {
-  "name": "animus-toolkit-marketplace",
+  "name": "animus-marketplace",
   "description": "jovetickop 的 Claude Code 插件市场 - 提供 superpowers-zh 中文技能集、harness-cc 编码工作流引擎、状态栏、配置模板",
   "owner": {
     "name": "jovetickop"
   },
   "plugins": [
     {
-      "name": "animus-toolkit",
+      "name": "animus",
       "description": "包含 superpowers-zh 中文技能集(20个)、harness-cc 编码工作流引擎、planning-with-files 计划管理、linear-automation Linear项目管理、statusline 状态栏、通用配置模板和 MCP 配置",
       "version": "1.4.0",
       "source": "./"

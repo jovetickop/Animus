@@ -1,10 +1,10 @@
-# animus-toolkit
+# animus
 
 jovetickop 的 Claude Code 个人工具包。包含 **25 个技能**（20 个 superpowers-zh 中文技能 + harness-cc 编码工作流引擎 + tdd-workflow + planning-with-files 计划管理 + linear-automation Linear项目管理 + integrate-to-animus 集成工具）以及配置模板。
 
 ## 架构
 
-animus-toolkit 将个人开发工具打包为标准 Claude Code 插件：
+animus 将个人开发工具打包为标准 Claude Code 插件：
 
 - **skills/** — 25 个技能，直接扫描识别，覆盖从需求探索到代码交付的完整开发生命周期
 - **plugins/claude-hud/** — 实时状态栏 HUD（上下文健康度、工具活动、Agent 追踪、待办进度）
@@ -18,10 +18,10 @@ animus-toolkit 将个人开发工具打包为标准 Claude Code 插件：
 
 ```bash
 /plugin marketplace add jovetickop/Animus
-/plugin install animus-toolkit@animus-toolkit-marketplace
+/plugin install animus@animus-marketplace
 ```
 
-编辑 `~/.claude/settings.json`，在 `enabledPlugins` 中添加 `"animus-toolkit@animus-toolkit-marketplace": true`，然后执行 `/reload-plugins`。
+编辑 `~/.claude/settings.json`，在 `enabledPlugins` 中添加 `"animus@animus-marketplace": true`，然后执行 `/reload-plugins`。
 
 > 备用安装方式（Git URL）见 [开发者指南](./docs/plugin-development-guide.md)。
 

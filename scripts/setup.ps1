@@ -1,11 +1,11 @@
-# setup.ps1 — animus-toolkit 自动配置脚本
+# setup.ps1 — animus 自动配置脚本
 # 运行方式：powershell -File setup.ps1
 
 $pluginDir = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
 $settingsPath = "$env:USERPROFILE\.claude\settings.json"
 $statuslinePath = "$pluginDir\hooks\statusline.sh"
 
-Write-Host "=== animus-toolkit 自动配置 ===" -ForegroundColor Cyan
+Write-Host "=== animus 自动配置 ===" -ForegroundColor Cyan
 Write-Host "检测到插件安装路径: $pluginDir`n"
 
 # 读取 settings.json，不存在则创建空对象
@@ -85,25 +85,25 @@ if (-not $jsonObj.enabledPlugins -or $jsonObj.enabledPlugins -is [Array]) {
   $jsonObj | Add-Member -NotePropertyName "enabledPlugins" -NotePropertyValue (@{ } -as [PSCustomObject]) -Force
 }
 
-$pluginKey = "animus-toolkit@animus-toolkit-marketplace"
+$pluginKey = "animus@animus-marketplace"
 $existingPluginState = $jsonObj.enabledPlugins.$pluginKey
 # 区分：从未设置过($null) vs 已存在但为 false/true
 if ($null -eq $existingPluginState) {
-  $choice = Read-Host "是否将 animus-toolkit 添加到 enabledPlugins？(y=是/n=跳过) [y]"
+  $choice = Read-Host "是否将 animus 添加到 enabledPlugins？(y=是/n=跳过) [y]"
   if ($choice -ne 'n') {
     $jsonObj.enabledPlugins | Add-Member -NotePropertyName $pluginKey -NotePropertyValue $true -Force
     $modified = $true
-    Write-Host "  ✅ 已添加 animus-toolkit 到 enabledPlugins" -ForegroundColor Green
+    Write-Host "  ✅ 已添加 animus 到 enabledPlugins" -ForegroundColor Green
   }
 } elseif ($existingPluginState -eq $false) {
-  $choice = Read-Host "animus-toolkit 已被禁用，是否重新启用？(y=启用/n=保持禁用) [y]"
+  $choice = Read-Host "animus 已被禁用，是否重新启用？(y=启用/n=保持禁用) [y]"
   if ($choice -ne 'n') {
     $jsonObj.enabledPlugins.$pluginKey = $true
     $modified = $true
-    Write-Host "  ✅ animus-toolkit 已重新启用" -ForegroundColor Green
+    Write-Host "  ✅ animus 已重新启用" -ForegroundColor Green
   }
 } else {
-  Write-Host "  ⏭️  animus-toolkit 已启用" -ForegroundColor Yellow
+  Write-Host "  ⏭️  animus 已启用" -ForegroundColor Yellow
 }
 
 # 写回文件

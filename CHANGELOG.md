@@ -3,7 +3,7 @@
 ## 1.3.0 (2026-06-20 14:00)
 
 ### 新增
-- integrate-to-animus 技能：将新内容集成到 animus-toolkit 插件包，从确认来源到更新文档的完整工作流
+- integrate-to-animus 技能：将新内容集成到 animus 插件包，从确认来源到更新文档的完整工作流
 - docs/workflow-guide.md：开发工作流协作指南
 
 ### 变更
