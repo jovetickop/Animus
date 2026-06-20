@@ -3,6 +3,7 @@
 .claude/rules/
 .claude/harness/
 .claude/templates/
+.claude/linear/
 .idea/
 .vscode/
 *.swp
