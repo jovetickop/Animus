@@ -50,7 +50,6 @@ animus 包含 27 个技能，覆盖核心工作流、开发流程管理、代码
 | **using-git-worktrees** | 使用 git worktree 隔离工作区进行功能开发。 | `skills/using-git-worktrees/SKILL.md` |
 | **using-superpowers** | 查找和使用技能的基础指引。 | `skills/using-superpowers/SKILL.md` |
 | **writing-skills** | 创建、编辑和验证技能。 | `skills/writing-skills/SKILL.md` |
-| **linear-automation** | Linear 项目/工单自动化管理。 | `skills/linear-automation/SKILL.md` |
 
 ## 文档处理
 
