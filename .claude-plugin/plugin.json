@@ -8,6 +8,6 @@
   "homepage": "https://github.com/jovetickop/Animus",
   "repository": "https://github.com/jovetickop/Animus",
   "license": "MIT",
-  "hooks": "./hooks/claude-codex-hooks.json",
+  "hooks": "./plugins/ponytail/hooks/claude-codex-hooks.json",
   "keywords": ["skills", "chinese", "workflow", "planning", "harness", "claude-hud", "coding", "superpowers", "doc", "pptx", "debugging", "tdd", "code-review", "mcp", "brainstorming", "ponytail", "lazy", "minimal"]
 }
