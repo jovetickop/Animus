@@ -1,6 +1,6 @@
 {
   "name": "animus",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "jovetickop 的 Claude Code 工具包插件",
   "license": "MIT",
   "type": "module"

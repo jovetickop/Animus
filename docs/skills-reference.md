@@ -1,6 +1,6 @@
 # 技能列表
 
-animus 包含 25 个技能，覆盖核心工作流、开发流程管理、代码审查与协作、中文规范、工具与基础设施。
+animus 包含 27 个技能，覆盖核心工作流、开发流程管理、代码审查与协作、中文规范、工具与基础设施。
 
 ## 核心工作流
 
@@ -51,3 +51,10 @@ animus 包含 25 个技能，覆盖核心工作流、开发流程管理、代码
 | **using-superpowers** | 查找和使用技能的基础指引。 | `skills/using-superpowers/SKILL.md` |
 | **writing-skills** | 创建、编辑和验证技能。 | `skills/writing-skills/SKILL.md` |
 | **linear-automation** | Linear 项目/工单自动化管理。 | `skills/linear-automation/SKILL.md` |
+
+## 文档处理
+
+| 技能 | 说明 | 路径 |
+|------|------|------|
+| **doc** | 创建、编辑和审查 `.docx` 文档，支持 python-docx 编程化操作和视觉渲染验证。 | `skills/doc/SKILL.md` |
+| **pptx** | 创建、编辑和审查 `.pptx` 演示文稿，支持模板编辑、pptxgenjs 创建、缩略图预览和视觉 QA。 | `skills/pptx/SKILL.md` |
